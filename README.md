@@ -1,6 +1,29 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## WriteUp
+1. Describe the effect each of the P, I, D components had in your implementation.
+   P: 
+      - With Proportional controller, output is proportional to (crosstrack)error signal.
+      - The constant is called proportional gain. If the proportional gain is too large, output will begin to oscillate
+  
+   D: 
+      -  Differential Controller is being used along with proportional controller to tackle oscillation      problem
+      - With this term we add derivative of crosstrack error which will smoothen the output
+
+   I:
+      - But PD controller is not enought to tackle systematic bias problem.
+      - To solve the systematic bias problem, we add sum of all cross track errors i.e.adding Integral    controller to PD.
+
+
+2. Describe how the final hyperparameters were chosen.
+   I tried manually tuning(trial & error) the paramneters to better understand the impact.
+   I first set all hyperparameters to 1. Then gradually increased & decreased each hyperparameter values individually to see impact.
+   (0.25, 0.0002, 2.5) values worked out good for the solution.
+
+  Please check attached [video](https://github.com/sandiptambde/CarND-PID-Control-Project/blob/master/CMakeLists.txt) 
+
+  
 ---
 
 ## Dependencies
